@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+#score-panel, #timer {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+#game-container {
+    width: 600px;
+    height: 400px;
+    border: 2px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.pet {
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+}
