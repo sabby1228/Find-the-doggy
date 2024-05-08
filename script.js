@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let level = 1;
     let timeLeft = 30; // Kezdő idő 30 másodperc
     let timer;
-    const emojis = ['🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼', '🐨', '🐯', '🦁', '🐮', '🐷', '🐸', '🐵'];
+    let posArrayLength = 20;
+    const emojis = ['🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐨', '🐯', '🦁', '🐮', '🐷', '🐸', '🐵'];
 
     function populateGame() {
         gameContainer.innerHTML = ''; // Törli az előző állatokat
-        let positions = Array.from({ length: 20 }, (_, index) => index).sort(() => Math.random() - 0.5);
+        let positions = Array.from({ length: posArrayLength }, (_, index) => index).sort(() => Math.random() - 0.5);
         let dogPosition = Math.floor(Math.random() * positions.length); // Véletlenszerű hely a kutyának
         positions.forEach(pos => {
             const pet = document.createElement('div');
@@ -25,7 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
             pet.addEventListener('click', function() {
                 if (this.dataset.type === 'dog') {
                     if (level === 5) {
-                        alert('Gratulálunk, elérte az 5. szintet és nyert!');
+                        posArrayLength = 25;
+                    }
+                    if (level === 10) {
+                        alert('Gratulálunk, elérte a 10. szintet! Ez azt is jelenti egyben, hogy megkapom az ötöst?');
                         resetGame();
                     } else {
                         level++;
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function resetGame() {
+        posArrayLength = 20;
         level = 1;
         timeLeft = 30;
         scorePanel.textContent = 'Szint: 1';
