@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else {
                         level++;
                         scorePanel.textContent = `Szint: ${level}`;
-                        timeLeft = Math.max(timeLeft - 5, 5); // Csökkenti az időt minden szintnél, minimum 5 másodperc
+                        timeLeft = Math.max(timeLeft - 2, 5); // Csökkenti az időt minden szintnél, minimum 5 másodperc
                         populateGame();
                     }
                 } else {
