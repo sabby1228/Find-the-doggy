@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         posArrayLength = 25;
                     }
                     if (level === 10) {
-                        alert('Gratulálunk, elérte a 10. szintet! Ez azt is jelenti egyben, hogy megkapom az ötöst?');
-                        resetGame();
+                        window.location.href = "winpage.html"; 
+                        
                     } else {
                         level++;
                         scorePanel.textContent = `Szint: ${level}`;
